@@ -1,0 +1,30 @@
+{
+  "name": "whats-ur-weather-api",
+  "version": "1.0.0",
+  "description": "api for weather data",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/khilchuk-ol/whats-ur-weather-api.git"
+  },
+  "keywords": [
+    "rest",
+    "api",
+    "express",
+    "nodejs",
+    "server",
+    "weather"
+  ],
+  "author": "Khilchuk O.",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/khilchuk-ol/whats-ur-weather-api/issues"
+  },
+  "homepage": "https://github.com/khilchuk-ol/whats-ur-weather-api#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "weather": [
+    {
+      "id": 0,
+      "name": "openweathermap",
+      "api_url": "api.openweathermap.org/data/2.5/weather?q={cityName}&appid={APIkey}",
+      "key": "372e76dbe7a2df342626f80779f5821d",
+      "priority": 0
+    },
+    {
+      "id": 1,
+      "name": "weatherapi",
+      "api_url": "http://api.weatherapi.com/v1/current.json?key={APIkey}&q={cityName}&aqi=no",
+      "key": "bf7bb58e1ffd4cb3ad6181504211510",
+      "priority": 1
+    },
+    {
+      "id": 2,
+      "name": "tomorrow",
+      "api_url": "https://api.tomorrow.io/v4/timelines?location={lat},{lng}&fields={fieldsArray}&startTime={startTimeInISO}&endTime={endTimeInISO}&units=metric&apikey={APIkey}",
+      "key": "iJAVP8Lc4f6O3Pbz4D3RbdFA05hqU2mr",
+      "priority": 1
+    },
+    {
+      "id": 3,
+      "name": "stormglass",
+      "api_url": "https://api.stormglass.io/v2/weather/point?lat={lat}&lng={lng}&params={fields}&start={startTimeInISO}%end={endTimeInISO}",
+      "key": "49ca534c-2e71-11ec-93e3-0242ac130002-49ca53ba-2e71-11ec-93e3-0242ac130002",
+      "priority": 2
+    }
+  ],
+  "geo": [
+    {
+      "id": 0,
+      "name": "google.maps",
+      "api_url": "https://maps.googleapis.com/maps/api/geocode/json?address={Address}&key={APIkey}",
+      "key": "AIzaSyCsVo-fG9BbnpNDuyX3ubgMRBa-PXbXPhg",
+      "priority": 0
+    }
+  ]
+}
