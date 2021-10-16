@@ -1,4 +1,4 @@
-import WeatherRequestSenderStrategy from "../abstr/weatherReqStrategy.js";
+import WeatherRequestSenderStrategy from "../abstr/weatherReq.strategy.js";
 
 class StormglassStrategy extends WeatherRequestSenderStrategy {
   constructor(

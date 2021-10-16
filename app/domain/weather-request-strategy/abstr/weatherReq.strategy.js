@@ -1,4 +1,4 @@
-import InvalidUrlException from "../../exceptions/InvalidUrlException.js";
+import InvalidUrlException from "../../exceptions/invalidUrl.exception.js";
 
 class WeatherRequestSenderStrategy {
   constructor(name, apiUrl, apiKey) {
