@@ -13,10 +13,10 @@ class StormglassStrategy extends WeatherRequestSenderStrategy {
     this.getCoord = getCoord;
   }
 
-  async sendRequest(
+  sendRequest = async (
     cityName,
     fieldsArr = ["airTemperature", "humidity", "windSpeed"]
-  ) {
+  ) => {
     const [lat, lng] = this.getCoord(cityName);
 
     const curTime = new Date();
@@ -40,7 +40,7 @@ class StormglassStrategy extends WeatherRequestSenderStrategy {
     })
       .then((res) => res.json())
       .then((data) => this.resDataParser(data));
-  }
+  };
 }
 
 export const basicDataParser = (data) => {

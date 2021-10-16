@@ -13,10 +13,10 @@ class TomorrowStrategy extends WeatherRequestSenderStrategy {
     this.getCoord = getCoord;
   }
 
-  async sendRequest(
+  sendRequest = async (
     cityName,
     fieldsArr = ["temperature", "humidity", "windSpeed"]
-  ) {
+  ) => {
     const [lat, lng] = this.getCoord(cityName);
 
     const curTime = new Date();
@@ -37,7 +37,7 @@ class TomorrowStrategy extends WeatherRequestSenderStrategy {
     return await fetch(url)
       .then((res) => res.json())
       .then((data) => this.resDataParser(data));
-  }
+  };
 }
 
 export const basicDataParser = (data) => {

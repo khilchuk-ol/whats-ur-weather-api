@@ -6,7 +6,7 @@ class WeatherapiStrategy extends WeatherRequestSenderStrategy {
     this.resDataParser = resDataParser;
   }
 
-  async sendRequest(cityName) {
+  sendRequest = async (cityName) => {
     const requestValues = {
       APIkey: this.apiKey,
       cityName: cityName,
@@ -17,7 +17,7 @@ class WeatherapiStrategy extends WeatherRequestSenderStrategy {
     return await fetch(url)
       .then((res) => res.json())
       .then((data) => this.resDataParser(data));
-  }
+  };
 }
 
 export const basicDataParser = (data) => {
