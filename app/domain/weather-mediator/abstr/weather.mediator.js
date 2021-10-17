@@ -1,0 +1,3 @@
+class WeatherMediator {
+  constructor() {}
+}
