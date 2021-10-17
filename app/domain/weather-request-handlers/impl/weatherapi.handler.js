@@ -14,7 +14,7 @@ class WeatherapiHandler extends WeatherRequestHandler {
       cityName: cityName,
     };
 
-    const url = parseUrl(requestValues);
+    const url = parseUrl(this.reqData.url, requestValues);
 
     let err = null;
     const data = await fetch(url)

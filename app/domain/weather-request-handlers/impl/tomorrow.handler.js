@@ -33,7 +33,7 @@ class TomorrowHandler extends WeatherRequestHandler {
       endTimeInISO: laterTime.toISOString(),
     };
 
-    const url = parseUrl(requestValues);
+    const url = parseUrl(this.reqData.url, requestValues);
 
     let err = null;
     const data = await fetch(url)
