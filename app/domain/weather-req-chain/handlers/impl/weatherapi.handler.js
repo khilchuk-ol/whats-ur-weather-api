@@ -1,7 +1,7 @@
-import { parseUrl } from "../../utils/url.utils";
-import WeatherRequestHandler from "../abstr/weatherRequest.handler";
+import { parseUrl } from "../../../utils/url.utils.js";
+import WeatherRequestHandler from "../abstr/weatherRequest.handler.js";
 
-class OpenweathermapHandler extends WeatherRequestHandler {
+class WeatherapiHandler extends WeatherRequestHandler {
   constructor(reqData, resDataParser, handler) {
     this.reqData = reqData;
     this.resDataParser = resDataParser;
@@ -32,10 +32,10 @@ class OpenweathermapHandler extends WeatherRequestHandler {
 
 export const basicDataParser = (data) => {
   return {
-    windSpeed: data.wind.speed,
-    temperature: data.main.temp,
-    humidity: data.main.humidity,
+    windSpeed: data.current.wind_kph,
+    temperature: data.current.temp_c,
+    humidity: data.current.humidity,
   };
 };
 
-export default OpenweathermapHandler;
+export default WeatherapiHandler;

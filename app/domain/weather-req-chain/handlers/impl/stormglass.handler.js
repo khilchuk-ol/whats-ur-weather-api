@@ -1,4 +1,4 @@
-import { parseUrl } from "../../utils/url.utils";
+import { parseUrl } from "../../../utils/url.utils.js";
 import WeatherRequestHandler from "../abstr/weatherRequest.handler.js";
 
 const DEFAULT_FIELDS = ["airTemperature", "humidity", "windSpeed"];

@@ -1,4 +1,4 @@
-import HandlersFactoryFuncsCollectionAbstr from "../abstr/handlersFactoryFuncsCollection.abstr";
+import HandlersFactoryFuncsCollectionAbstr from "../abstr/handlersFactoryFuncs.collection.abstr.js";
 
 class HandlersFactoryFuncsCollection extends HandlersFactoryFuncsCollectionAbstr {
   constructor() {

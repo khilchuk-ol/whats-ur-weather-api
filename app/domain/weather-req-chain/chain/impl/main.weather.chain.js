@@ -1,4 +1,4 @@
-import WeatherChain from "../abstr/weather.chain";
+import WeatherChain from "../abstr/weather.chain.js";
 
 class MainWeatherChain extends WeatherChain {
   constructor(creationalFuncsCollection, coordStrategy) {
