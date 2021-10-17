@@ -2,6 +2,7 @@ import HandlersFactoryFuncsCollectionAbstr from "../abstr/handlersFactoryFuncs.c
 
 class HandlersFactoryFuncsCollection extends HandlersFactoryFuncsCollectionAbstr {
   constructor() {
+    super();
     this.funcs = {};
   }
 

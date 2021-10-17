@@ -1,7 +1,9 @@
 import express from "express";
 
-import controller from "../controllers/weather.controller.js";
+import WeatherController from "../controllers/weather.controller.js";
+import chain from "../../domain/setupChain.js";
 
+const controller = new WeatherController(chain);
 const api = express.Router();
 
 api.get("/", (req, res) => {

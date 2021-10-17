@@ -1,15 +1,12 @@
+import axios from "axios";
+
 import { parseUrl } from "../../../utils/url.utils.js";
 import WeatherRequestHandler from "../abstr/weatherRequest.handler.js";
 
 const DEFAULT_FIELDS = ["airTemperature", "humidity", "windSpeed"];
 
 class StormglassHandler extends WeatherRequestHandler {
-  constructor(
-    reqData,
-    resDataParser,
-    getCoord = (cityName) => [0, 0],
-    handler
-  ) {
+  constructor(reqData, resDataParser, handler) {
     this.reqData = reqData;
     this.resDataParser = resDataParser;
     this.getCoord = getCoord;
@@ -17,7 +14,7 @@ class StormglassHandler extends WeatherRequestHandler {
   }
 
   sendRequest = async (cityName) => {
-    const [lat, lng] = this.getCoord(cityName);
+    const [lat, lng] = await this.reqData.getCoord(cityName);
 
     const curTime = new Date();
     const laterTime = { ...curTime };
@@ -36,13 +33,13 @@ class StormglassHandler extends WeatherRequestHandler {
     const url = parseUrl(this.reqData.url, requestValues);
 
     let err = null;
-    const data = await fetch(url, {
-      headers: {
-        Authorization: this.reqData.apiKey,
-      },
-    })
-      .then((res) => res.json())
-      .then((data) => this.resDataParser(data))
+    const data = await axios
+      .get(url, {
+        headers: {
+          Authorization: this.reqData.apiKey,
+        },
+      })
+      .then((res) => this.resDataParser(res.data))
       .catch((error) => {
         err = error;
       });

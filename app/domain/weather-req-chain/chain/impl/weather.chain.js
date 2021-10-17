@@ -1,7 +1,9 @@
-import WeatherChain from "../abstr/weather.chain.js";
+import WeatherChainAbstr from "../abstr/weather.chain.abstr.js";
 
-class MainWeatherChain extends WeatherChain {
+class WeatherChain extends WeatherChainAbstr {
   constructor(creationalFuncsCollection, coordStrategy) {
+    super();
+
     this.creationalFuncs = creationalFuncsCollection;
     this.coordStrategy = coordStrategy;
 
@@ -15,20 +17,18 @@ class MainWeatherChain extends WeatherChain {
       .map((o) => {
         return {
           name: o.name,
-          reqData: {
-            apiKey: o.key,
-            url: o.api_url,
-          },
+          apiKey: o.key,
+          url: o.api_url,
           getCoord: this.coordStrategy.getCoordinates,
         };
       });
 
     for (let data of handlersData) {
-      chain = this.creationalFuncs.getFunc(data.name)(data, chain);
+      this.chain = this.creationalFuncs.getFunc(data.name)(data, this.chain);
     }
   };
 
-  sendRequest = (cityName) => {
+  getWeather = async (cityName) => {
     if (!cityName.trim()) {
       return [
         null,
@@ -42,4 +42,4 @@ class MainWeatherChain extends WeatherChain {
   };
 }
 
-export default MainWeatherChain;
+export default WeatherChain;

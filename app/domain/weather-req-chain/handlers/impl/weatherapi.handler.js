@@ -1,8 +1,12 @@
+import axios from "axios";
+
 import { parseUrl } from "../../../utils/url.utils.js";
 import WeatherRequestHandler from "../abstr/weatherRequest.handler.js";
 
 class WeatherapiHandler extends WeatherRequestHandler {
   constructor(reqData, resDataParser, handler) {
+    super();
+
     this.reqData = reqData;
     this.resDataParser = resDataParser;
     this.handler = handler;
@@ -17,9 +21,9 @@ class WeatherapiHandler extends WeatherRequestHandler {
     const url = parseUrl(this.reqData.url, requestValues);
 
     let err = null;
-    const data = await fetch(url)
-      .then((res) => res.json())
-      .then((data) => this.resDataParser(data))
+    const data = await axios
+      .get(url)
+      .then((res) => this.resDataParser(res.data))
       .catch((error) => {
         err = error;
       });

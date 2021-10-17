@@ -1,27 +1,23 @@
-const weatherMediator = {
-  getWeather: async (cityName) => {
-    return [{ cityName }, null];
-  },
-};
-
-const getCurrentWeather = async (req, res) => {
-  const cityName = req.query.city;
-
-  const [data, err] = await weatherMediator.getWeather(cityName);
-
-  if (err || !data) {
-    res.status(500).send({
-      message: err.message || "Some error occurred while creating the Post.",
-    });
-
-    return;
+class WeatherController {
+  constructor(requestChain) {
+    this.chain = requestChain;
   }
 
-  res.send(data);
-};
+  getCurrentWeather = async (req, res) => {
+    const cityName = req.query.city;
 
-const services = {
-  getCurrentWeather,
-};
+    const [data, err] = await this.chain.getWeather(cityName);
 
-export default services;
+    if (err || !data) {
+      res.status(500).send({
+        message: err.message || "Some error occurred while creating the Post.",
+      });
+
+      return;
+    }
+
+    res.send(data);
+  };
+}
+
+export default WeatherController;
