@@ -3,12 +3,18 @@ import GoogleStrategy from "./coord-strategy/impl/google.strategy.js";
 import JsonConfigReader from "./config-reader/impl/json.configReader.js";
 import funcCol from "./setupHandlerCreators.js";
 
+let chain: WeatherChain;
+
 const configReader = new JsonConfigReader("api-providers.conf.json");
 const data = await configReader.readAllData();
 
-const coordStrategy = new GoogleStrategy(data.geo[0]);
+if (data instanceof Error) {
+  // console.log(data);
+} else {
+  const coordStrategy = new GoogleStrategy(data.geo[0]);
 
-const chain = new WeatherChain(funcCol, coordStrategy);
-chain.initializeChain(data.weather, 1);
+  chain = new WeatherChain(funcCol, coordStrategy);
+  chain.initializeChain(data.weather, 1);
+}
 
 export default chain;

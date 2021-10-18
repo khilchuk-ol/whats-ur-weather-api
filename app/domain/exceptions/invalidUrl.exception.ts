@@ -1,5 +1,8 @@
 class InvalidUrlException {
-  constructor(message, sender) {
+  message: string;
+  sender: object;
+
+  constructor(message: string, sender: object) {
     this.message = message;
     this.sender = sender;
   }

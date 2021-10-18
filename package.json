@@ -2,10 +2,13 @@
   "name": "whats-ur-weather-api",
   "version": "1.0.0",
   "description": "api for weather data",
-  "main": "server.js",
+  "main": "dist/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "prebuild": "tslint -c tslint.json -p tsconfig.json --fix",
+    "build": "tsc",
+    "prestart": "npm run build",
+    "start": "node .",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -27,7 +30,12 @@
   "homepage": "https://github.com/khilchuk-ol/whats-ur-weather-api#readme",
   "dependencies": {
     "axios": "^0.23.0",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "tslint": "^6.1.3",
+    "typescript": "^4.4.4"
   },
-  "type": "module"
+  "type": "module",
+  "devDependencies": {
+    "@types/express": "^4.17.13"
+  }
 }

@@ -1,10 +1,16 @@
+import { Request, Response } from "express";
+
+import WeatherChainAbstr from "../../domain/weather-req-chain/chain/weather.chain.interface.js";
+
 class WeatherController {
-  constructor(requestChain) {
+  chain: WeatherChainAbstr;
+
+  constructor(requestChain: WeatherChainAbstr) {
     this.chain = requestChain;
   }
 
-  getCurrentWeather = async (req, res) => {
-    const cityName = req.query.city;
+  getCurrentWeather = async (req: Request, res: Response) => {
+    const cityName = req.query.city.toString();
 
     const [data, err] = await this.chain.getWeather(cityName);
 
