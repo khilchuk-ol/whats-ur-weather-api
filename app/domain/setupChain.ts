@@ -9,7 +9,7 @@ const configReader = new JsonConfigReader("api-providers.conf.json");
 const data = await configReader.readAllData();
 
 if (data instanceof Error) {
-  // console.log(data);
+  throw data;
 } else {
   const coordStrategy = new GoogleStrategy(data.geo[0]);
 

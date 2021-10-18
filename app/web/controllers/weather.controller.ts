@@ -1,16 +1,27 @@
 import { Request, Response } from "express";
 
 import WeatherChainAbstr from "../../domain/weather-req-chain/chain/weather.chain.interface.js";
+import Logger from "../../logger/logger.interface.js";
 
 class WeatherController {
   chain: WeatherChainAbstr;
+  logger: Logger;
 
-  constructor(requestChain: WeatherChainAbstr) {
+  constructor(requestChain: WeatherChainAbstr, logger: Logger) {
     this.chain = requestChain;
+    this.logger = logger;
   }
 
   getCurrentWeather = async (req: Request, res: Response) => {
-    const cityName = req.query.city.toString();
+    const cityName = req.query.city.toString().trim();
+
+    if (!cityName || !isNaN(+cityName)) {
+      res.status(200).send({ message: "Invalid city name provided" });
+      return;
+    }
+
+    this.logger.log(`Current weather request made for city=${cityName}.
+                     URL: ${req.url}`);
 
     const [data, err] = await this.chain.getWeather(cityName);
 

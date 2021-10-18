@@ -1,0 +1,13 @@
+
+      ---------------
+      Mon, 18 Oct 2021 17:59:21 GMT. Current weather request made for city=Slavuta.
+                     URL: /current?city=Slavuta
+      ---------------
+      Mon, 18 Oct 2021 18:02:26 GMT. Current weather request made for city=Slavuta.
+                     URL: /current?city=Slavuta
+      ---------------
+      Mon, 18 Oct 2021 18:03:34 GMT. Current weather request made for city=Slavuta.
+                     URL: /current?city=Slavuta
+      ---------------
+      Mon, 18 Oct 2021 18:04:29 GMT. Current weather request made for city=Lviv.
+                     URL: /current?city=Lviv
