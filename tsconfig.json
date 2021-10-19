@@ -12,5 +12,9 @@
       "*": ["node_modules/*"]
     }
   },
-  "include": ["app/*", "./server.ts"]
+  "include": [
+    "app/*",
+    "./server.ts",
+    "app/data/unit-of-work/setupDbConnection.js"
+  ]
 }

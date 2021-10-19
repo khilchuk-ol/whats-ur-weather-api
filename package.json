@@ -29,6 +29,7 @@
   },
   "homepage": "https://github.com/khilchuk-ol/whats-ur-weather-api#readme",
   "dependencies": {
+    "@types/mysql": "^2.15.19",
     "axios": "^0.23.0",
     "express": "^4.17.1",
     "mysql": "^2.18.1",

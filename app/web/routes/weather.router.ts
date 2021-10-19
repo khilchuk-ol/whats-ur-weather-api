@@ -1,13 +1,12 @@
 import express from "express";
+import WeatherController from "../controllers/weather.controller";
 
-import WeatherController from "../controllers/weather.controller.js";
-import FileLogger from "../../logger/impl/fileLogger.js";
-import chain from "../../domain/setupChain.js";
-
-const logger = new FileLogger("log.txt");
-
-const controller = new WeatherController(chain, logger);
 const api = express.Router();
+let weatherController: WeatherController = null;
+
+api.prototype.setController = (controller: WeatherController): void => {
+  weatherController = controller;
+};
 
 api.get("/", (req, res) => {
   res.send({
@@ -15,6 +14,6 @@ api.get("/", (req, res) => {
   });
 });
 
-api.get("/current", controller.getCurrentWeather);
+api.get("/current", weatherController.getCurrentWeather);
 
 export default api;

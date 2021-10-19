@@ -2,14 +2,21 @@ import { Request, Response } from "express";
 
 import WeatherChainAbstr from "../../domain/weather-req-chain/chain/weather.chain.interface.js";
 import Logger from "../../logger/logger.interface.js";
+import Analyser from "../../analyser/analyser.interface.js";
 
 class WeatherController {
   chain: WeatherChainAbstr;
   logger: Logger;
+  analyser: Analyser;
 
-  constructor(requestChain: WeatherChainAbstr, logger: Logger) {
+  constructor(
+    requestChain: WeatherChainAbstr,
+    logger: Logger,
+    analyser: Analyser
+  ) {
     this.chain = requestChain;
     this.logger = logger;
+    this.analyser = analyser;
   }
 
   getCurrentWeather = async (req: Request, res: Response) => {
@@ -22,6 +29,8 @@ class WeatherController {
 
     this.logger.log(`Current weather request made for city=${cityName}.
                      URL: ${req.url}`);
+
+    this.analyser.incrementCityCount(cityName);
 
     const [data, err] = await this.chain.getWeather(cityName);
 

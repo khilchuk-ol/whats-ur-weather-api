@@ -11,3 +11,29 @@
       ---------------
       Mon, 18 Oct 2021 18:04:29 GMT. Current weather request made for city=Lviv.
                      URL: /current?city=Lviv
+      ---------------
+      Tue, 19 Oct 2021 19:37:22 GMT. Server is running on port 8080.
+      ---------------
+      Tue, 19 Oct 2021 19:37:43 GMT. Current weather request made for city=Slavuta.
+                     URL: /weather/current?city=Slavuta
+      ---------------
+      Tue, 19 Oct 2021 19:41:55 GMT. Server is running on port 8080.
+      ---------------
+      Tue, 19 Oct 2021 19:41:58 GMT. Current weather request made for city=Slavuta.
+                     URL: /weather/current?city=Slavuta
+      ---------------
+      Tue, 19 Oct 2021 19:44:19 GMT. Server is running on port 8080.
+      ---------------
+      Tue, 19 Oct 2021 19:44:21 GMT. Current weather request made for city=Slavuta.
+                     URL: /weather/current?city=Slavuta
+      ---------------
+      Tue, 19 Oct 2021 19:44:54 GMT. Current weather request made for city=Lviv.
+                     URL: /weather/current?city=Lviv
+      ---------------
+      Tue, 19 Oct 2021 19:46:15 GMT. Server is running on port 8080.
+      ---------------
+      Tue, 19 Oct 2021 20:04:31 GMT. Server is running on port 8080.
+      ---------------
+      Tue, 19 Oct 2021 20:06:14 GMT. Server is running on port 8080.
+      ---------------
+      Tue, 19 Oct 2021 20:07:56 GMT. Server is closed.
