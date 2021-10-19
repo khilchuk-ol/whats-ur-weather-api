@@ -4,17 +4,17 @@ import WeatherReqInfo from "../../../models/WeatherReqInfo.js";
 import WeatherReqInfoDAOAbstr from "../../weatherReqInfo.dao.interface.js";
 
 class WeatherReqInfoDao implements WeatherReqInfoDAOAbstr {
-  readonly connection: mysql.Connection;
+  readonly pool: mysql.Pool;
   readonly table: string;
 
-  constructor(connection: mysql.Connection) {
-    this.connection = connection;
+  constructor(pool: mysql.Pool) {
+    this.pool = pool;
     this.table = "weather_req_info";
   }
 
   add = (item: WeatherReqInfo): Promise<void> =>
     new Promise((resolve, reject) => {
-      this.connection.query(
+      this.pool.query(
         `insert into ${this.table}
                                 (city, req_count)
                          values ('${item.city}', ${
@@ -34,7 +34,7 @@ class WeatherReqInfoDao implements WeatherReqInfoDAOAbstr {
 
   update = (item: WeatherReqInfo): Promise<void> =>
     new Promise((resolve, reject) => {
-      this.connection.query(
+      this.pool.query(
         `update ${this.table}
          set city = '${item.city}', req_count = ${item.reqCount}
          where id = ${item.id} or city = '${item.city}';`,
@@ -48,7 +48,7 @@ class WeatherReqInfoDao implements WeatherReqInfoDAOAbstr {
 
   remove = (item: WeatherReqInfo): Promise<void> =>
     new Promise((resolve, reject) => {
-      this.connection.query(
+      this.pool.query(
         `delete from ${this.table} where id = ${item.id} or city = '${item.city}';`,
         (err: Error, res: any) => {
           if (err) {
@@ -60,7 +60,7 @@ class WeatherReqInfoDao implements WeatherReqInfoDAOAbstr {
 
   incrementReqCount = async (city: string): Promise<void> =>
     new Promise((resolve, reject) => {
-      this.connection.query(
+      this.pool.query(
         `call increment_city_req_counter('${city}');`,
         (err: Error, res: any) => {
           if (err) {
@@ -74,7 +74,7 @@ class WeatherReqInfoDao implements WeatherReqInfoDAOAbstr {
 
   get = async (id: number): Promise<WeatherReqInfo> =>
     new Promise((resolve, reject) => {
-      this.connection.query(
+      this.pool.query(
         `select * from ${this.table} where id = ${id};`,
         (err: Error, res: any) => {
           if (err) {
@@ -96,7 +96,7 @@ class WeatherReqInfoDao implements WeatherReqInfoDAOAbstr {
 
   getAll = (): Promise<WeatherReqInfo[]> =>
     new Promise((resolve, reject) => {
-      this.connection.query(
+      this.pool.query(
         `select * from ${this.table};`,
         (err: Error, res: any) => {
           if (err) {

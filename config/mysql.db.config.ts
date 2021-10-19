@@ -1,4 +1,5 @@
 const config = {
+  connectionLimit: 10,
   host: "localhost",
   user: "Olena",
   password: "1111",

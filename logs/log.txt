@@ -37,3 +37,11 @@
       Tue, 19 Oct 2021 20:06:14 GMT. Server is running on port 8080.
       ---------------
       Tue, 19 Oct 2021 20:07:56 GMT. Server is closed.
+      ---------------
+      Tue, 19 Oct 2021 20:27:47 GMT. Server is running on port 8080.
+      ---------------
+      Tue, 19 Oct 2021 20:27:56 GMT. Current weather request made for city=London.
+                     URL: /weather/current?city=London
+      ---------------
+      Tue, 19 Oct 2021 20:28:17 GMT. Current weather request made for city=London.
+                     URL: /weather/current?city=London
