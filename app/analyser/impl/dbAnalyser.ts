@@ -1,16 +1,15 @@
-import DAO from "../../data/dao/dao.interface.js";
-import WeatherReqInfo from "../../data/models/WeatherReqInfo.js";
 import Analyser from "../analyser.interface.js";
+import WeatherReqInfoDao from "../../data/dao/weatherReqInfo.dao.interface";
 
 class DbAnalyser implements Analyser {
-  weatherDao: DAO<WeatherReqInfo>;
+  weatherDao: WeatherReqInfoDao;
 
-  constructor(weatherDao: DAO<WeatherReqInfo>) {
+  constructor(weatherDao: WeatherReqInfoDao) {
     this.weatherDao = weatherDao;
   }
 
   incrementCityCount = (city: string) => {
-    this.weatherDao.find();
+    this.weatherDao.incrementReqCount(city);
   };
 }
 
