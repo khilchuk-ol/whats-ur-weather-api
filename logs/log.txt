@@ -45,3 +45,77 @@
       ---------------
       Tue, 19 Oct 2021 20:28:17 GMT. Current weather request made for city=London.
                      URL: /weather/current?city=London
+      ---------------
+      Wed, 20 Oct 2021 13:59:46 GMT. Server is running on port 8080.
+      ---------------
+      Wed, 20 Oct 2021 13:59:52 GMT. Current weather request made for city=Kyiv.
+                     URL: /weather/current?city=Kyiv
+      ---------------
+      Wed, 20 Oct 2021 14:00:09 GMT. Current weather request made for city=Lviv.
+                     URL: /weather/current?city=Lviv
+      ---------------
+      Wed, 20 Oct 2021 14:00:49 GMT. Current weather request made for city=Kyiv.
+                     URL: /weather/current?city=Kyiv
+      ---------------
+      Wed, 20 Oct 2021 14:00:53 GMT. Current weather request made for city=Lviv.
+                     URL: /weather/current?city=Lviv
+      ---------------
+      Wed, 20 Oct 2021 14:02:00 GMT. Current weather request made for city=Lviv.
+                     URL: /weather/current?city=Lviv
+      ---------------
+      Wed, 20 Oct 2021 14:02:59 GMT. Current weather request made for city=Kyiv.
+                     URL: /weather/current?city=Kyiv
+      ---------------
+      Wed, 20 Oct 2021 14:06:27 GMT. Current weather request made for city=Kyiv.
+                     URL: /weather/current?city=Kyiv
+      ---------------
+      Wed, 20 Oct 2021 14:07:14 GMT. Current weather request made for city=Kyiv.
+                     URL: /weather/current?city=Kyiv
+      ---------------
+      Wed, 20 Oct 2021 14:11:20 GMT. Server is running on port 8080.
+      ---------------
+      Wed, 20 Oct 2021 14:11:54 GMT. Current weather request made for city=Kyiv.
+                     URL: /weather/current?city=Kyiv
+      ---------------
+      Wed, 20 Oct 2021 14:12:20 GMT. Current weather request made for city=Slavuta.
+                     URL: /weather/current?city=Slavuta
+      ---------------
+      Wed, 20 Oct 2021 14:16:47 GMT. Current weather request made for city=Kyiv.
+                     URL: /weather/current?city=Kyiv
+      ---------------
+      Wed, 20 Oct 2021 14:18:10 GMT. Current weather request made for city=Kyiv.
+                     URL: /weather/current?city=Kyiv
+      ---------------
+      Wed, 20 Oct 2021 14:18:16 GMT. Current weather request made for city=Lviv.
+                     URL: /weather/current?city=Lviv
+      ---------------
+      Wed, 20 Oct 2021 14:18:29 GMT. Current weather request made for city=Slavuta.
+                     URL: /weather/current?city=Slavuta
+      ---------------
+      Wed, 20 Oct 2021 14:20:34 GMT. Current weather request made for city=Lviv.
+                     URL: /weather/current?city=Lviv
+      ---------------
+      Wed, 20 Oct 2021 14:21:35 GMT. Current weather request made for city=Lviv.
+                     URL: /weather/current?city=Lviv
+      ---------------
+      Wed, 20 Oct 2021 14:26:06 GMT. Current weather request made for city=Kyiv.
+                     URL: /weather/current?city=Kyiv
+      ---------------
+      Wed, 20 Oct 2021 14:26:15 GMT. Current weather request made for city=Lviv.
+                     URL: /weather/current?city=Lviv
+      ---------------
+      Wed, 20 Oct 2021 14:26:36 GMT. Current weather request made for city=hhhhhhhh.
+                     URL: /weather/current?city=hhhhhhhh
+      ---------------
+      Wed, 20 Oct 2021 14:26:47 GMT. Current weather request made for city=llllllllllllllllllllllllllllllllllllllllllllllllllllllllll.
+                     URL: /weather/current?city=llllllllllllllllllllllllllllllllllllllllllllllllllllllllll
+      ---------------
+      Wed, 20 Oct 2021 15:47:01 GMT. Server is running on port 8080.
+      ---------------
+      Wed, 20 Oct 2021 15:47:01 GMT. Current weather request made for city=London.
+                     URL: /weather/current?city=London
+      ---------------
+      Wed, 20 Oct 2021 15:48:04 GMT. Server is running on port 8080.
+      ---------------
+      Wed, 20 Oct 2021 15:48:04 GMT. Current weather request made for city=London.
+                     URL: /weather/current?city=London

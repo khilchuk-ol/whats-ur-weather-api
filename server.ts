@@ -1,8 +1,8 @@
 import express from "express";
+import cors from "cors";
 
 import WeatherController from "./app/web/controllers/weather.controller.js";
 import FileLogger from "./app/logger/impl/fileLogger.js";
-import dbConfig from "./config/mysql.db.config.js";
 import WeatherReqInfoDao from "./app/data/dao/impl/database/weatherReqInfo.mysql.dao.js";
 import DbAnalyser from "./app/analyser/impl/dbAnalyser.js";
 import chain from "./app/domain/setupChain.js";
@@ -14,6 +14,12 @@ const analyser = new DbAnalyser(weatherReqInfoDao);
 const controller = new WeatherController(chain, logger, analyser);
 
 const app = express();
+
+const corsOptions = {
+  origin: "http://localhost:3000",
+};
+
+app.use(cors(corsOptions));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false, limit: "50mb" }));
@@ -34,3 +40,5 @@ const PORT = process.env.PORT || 8080;
 const server = app.listen(PORT, () => {
   logger.log(`Server is running on port ${PORT}.`);
 });
+
+export default server;

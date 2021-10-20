@@ -8,7 +8,7 @@
     "build": "tsc",
     "prestart": "npm run build",
     "start": "node .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npm run build && mocha tests/**/*test.js"
   },
   "repository": {
     "type": "git",
@@ -29,10 +29,18 @@
   },
   "homepage": "https://github.com/khilchuk-ol/whats-ur-weather-api#readme",
   "dependencies": {
+    "@types/chai": "^4.2.22",
+    "@types/cors": "^2.8.12",
+    "@types/mocha": "^9.0.0",
     "@types/mysql": "^2.15.19",
+    "@types/supertest": "^2.0.11",
     "axios": "^0.23.0",
+    "chai": "^4.3.4",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "mysql": "^2.18.1",
+    "supertest": "^6.1.6",
+    "ts-node": "^10.3.0",
     "tslint": "^6.1.3",
     "typescript": "^4.4.4"
   },
