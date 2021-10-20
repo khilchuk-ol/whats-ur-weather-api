@@ -4,6 +4,12 @@ import WeatherChainAbstr from "../../domain/weather-req-chain/chain/weather.chai
 import Logger from "../../logger/logger.interface.js";
 import Analyser from "../../analyser/analyser.interface.js";
 
+const isCityValid = (city: string): boolean => {
+  const alphaEngl = /^[A-Za-z - ]$/;
+
+  return city.trim() && alphaEngl.test(city);
+};
+
 class WeatherController {
   chain: WeatherChainAbstr;
   logger: Logger;
@@ -22,7 +28,7 @@ class WeatherController {
   getCurrentWeather = async (req: Request, res: Response) => {
     const cityName = req.query.city.toString().trim();
 
-    if (!cityName || !isNaN(+cityName)) {
+    if (!isCityValid(cityName)) {
       res.status(200).send({ message: "Invalid city name provided" });
       return;
     }
