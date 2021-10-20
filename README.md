@@ -23,7 +23,7 @@ Application provides 2 endpoints
 Basic endpoint, used to check whether the server works correctly. 
 Returns JSON object, containing only one property - welcoming message.
 
-JSON schema:\
+JSON schema:
 ``` typescript
 {
   message: string
@@ -35,7 +35,7 @@ JSON schema:\
 Main endpoint. Provides basic information about current weather in the city. City name should be alphabetic string, containing only English letters, no longer than 45 characters. 
 Returns JSON object, containing information about temperature (in C), humidity (in %) and windSpeed (in km/h).
 
-JSON schema:\
+JSON schema:
 ``` typescript
 {
   temperature: number,
