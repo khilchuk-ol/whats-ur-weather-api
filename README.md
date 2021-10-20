@@ -1,6 +1,6 @@
-# What's Ur Weather API (server application)
+# What's Ur Weather API (server application) :globe_with_meridians:
 
-This is an api for test task What's Ur Weather. 
+This is an api for test task What's Ur Weather :thermometer: :droplet: :cloud: \
 This project was developed using the following stack of technologies:
 - Node.JS
 - Express
@@ -22,21 +22,27 @@ Application provides 2 endpoints
 
 Basic endpoint, used to check whether the server works correctly. 
 Returns JSON object, containing only one property - welcoming message.
-JSON schema:
+
+JSON schema:\
+``` typescript
 {
   message: string
 }
+```
 
 ### /weather/current?city={city name}
 
 Main endpoint. Provides basic information about current weather in the city. City name should be alphabetic string, containing only English letters, no longer than 45 characters. 
-Returns JSON object, containing information about temperature (in C), humidity (in %) and windSpeed (in km/h)
-JSON schema:
+Returns JSON object, containing information about temperature (in C), humidity (in %) and windSpeed (in km/h).
+
+JSON schema:\
+``` typescript
 {
   temperature: number,
   humidity: number,
   windSpeed: number
 }
+```
 
 
 ## Available Scripts
